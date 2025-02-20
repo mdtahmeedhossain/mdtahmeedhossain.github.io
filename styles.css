@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -13,10 +14,12 @@ body {
     padding: 20px;
     background-color: #fff;
 }
+
 /* Navigation - modified for right alignment */
 header {
     margin-bottom: 40px;
 }
+
 nav ul {
     display: flex;
     list-style: none;
@@ -25,19 +28,23 @@ nav ul {
     border-radius: 5px;
     justify-content: flex-end; /* This aligns items to the right */
 }
+
 nav li {
     margin-left: 20px; /* Changed from margin-right to margin-left */
     margin-right: 0;   /* Reset right margin */
 }
+
 nav a {
     text-decoration: none;
     color: #495057;
     font-weight: bold;
     transition: color 0.3s;
 }
+
 nav a:hover {
     color: #0066cc;
 }
+
 /* For mobile responsiveness */
 @media (max-width: 768px) {
     nav ul {
@@ -50,6 +57,7 @@ nav a:hover {
         margin-bottom: 10px;
     }
 }
+
 /* Profile section - side by side layout */
 .profile-section {
     display: flex;
@@ -57,28 +65,34 @@ nav a:hover {
     margin: 60px 0;
     gap: 50px;
 }
+
 .profile-container {
     flex: 0 0 300px;
 }
+
 .profile-photo {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 .profile-info {
     flex: 1;
 }
+
 .profile-info h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #1a1a1a;
 }
+
 .bio {
     font-size: 1.1rem;
     margin-bottom: 30px;
     color: #555;
 }
+
 .cv-link {
     display: inline-block;
     padding: 10px 20px;
@@ -89,24 +103,25 @@ nav a:hover {
     font-weight: bold;
     transition: background-color 0.3s;
 }
+
 .cv-link:hover {
     background-color: #0056b3;
 }
+
 /* Research page styles */
 .research-item {
     margin-bottom: 40px;
 }
+
 h2 {
     margin-bottom: 20px;
     color: #343a40;
 }
+
 p {
     margin-bottom: 15px;
 }
-/* Add this line to make research item paragraphs justified */
-.research-item p {
-    text-align: justify;
-}
+
 /* Paper download link styling */
 .paper-link {
     display: inline-block;
@@ -118,9 +133,11 @@ p {
     border-radius: 3px;
     font-size: 0.9rem;
 }
+
 .paper-link:hover {
     background-color: #0056b3;
 }
+
 /* Footer */
 footer {
     margin-top: 60px;
@@ -128,17 +145,20 @@ footer {
     color: #6c757d;
     font-size: 0.9rem;
 }
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .profile-section {
         flex-direction: column;
         text-align: center;
     }
+
     .profile-container {
         flex: 0 0 auto;
         max-width: 200px;
         margin: 0 auto 30px;
     }
+
     nav ul {
         flex-direction: column;
     }
