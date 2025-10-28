@@ -1,4 +1,4 @@
-/* Base styles */
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,210 +6,76 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fff;
-    font-size: 16px;
-}
-
-/* Header and Navigation */
-header {
-    background-color: #fff;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: flex-end;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Navigation - modified for right alignment */
+header {
+    margin-bottom: 40px;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 40px;
-    margin: 0;
+    list-style: none;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    justify-content: flex-end; /* This aligns items to the right */
 }
 
 nav li {
-    display: inline;
+    margin-left: 20px; /* Changed from margin-right to margin-left */
+    margin-right: 0;   /* Reset right margin */
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    font-weight: 400;
-    font-size: 16px;
-    padding: 8px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
+    color: #495057;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    border-bottom-color: #007bff;
+    color: #0066cc;
 }
 
-nav a:active,
-nav a.current {
-    border-bottom-color: #007bff;
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end; /* Right align items in mobile view */
+    }
+    
+    nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 }
 
-/* Main content */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px;
-    min-height: calc(100vh - 120px);
-}
-
-/* Page content styles (for research and teaching pages) */
-.page-content {
-    max-width: 100%;
-}
-
-.page-content h1 {
-    font-size: 48px;
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.blue-line {
-    width: 100%;
-    height: 3px;
-    background-color: #007bff;
-    margin-bottom: 40px;
-}
-
-/* Research page styles */
-.research-paper {
-    display: flex;
-    margin-bottom: 60px;
-}
-
-.paper-sidebar {
-    width: 80px;
-    flex-shrink: 0;
-    margin-right: 40px;
-}
-
-.sidebar-content {
-    width: 6px;
-    height: 100px;
-    background-color: #007bff;
-    margin-top: 20px;
-}
-
-.paper-content {
-    flex: 1;
-}
-
-.paper-content h2 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-    line-height: 1.4;
-}
-
-.latest-version {
-    background-color: #007bff;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 500;
-    margin-left: 10px;
-}
-
-.paper-abstract {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    text-align: justify;
-}
-
-/* Teaching page styles */
-.institution-block {
-    margin-bottom: 50px;
-}
-
-.institution-block h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 30px;
-    line-height: 1.3;
-}
-
-.role-section {
-    margin-bottom: 30px;
-}
-
-.role-section h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 15px;
-    margin-left: 20px;
-}
-
-.course-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 12px 0;
-    margin-left: 40px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.course-entry:last-child {
-    border-bottom: none;
-}
-
-.course-title {
-    font-size: 16px;
-    font-weight: 400;
-    color: #333;
-    flex: 1;
-    margin-right: 20px;
-    line-height: 1.4;
-}
-
-.course-semester {
-    font-size: 14px;
-    color: #666;
-    white-space: nowrap;
-    text-align: right;
-    min-width: 150px;
-}
-
-/* Profile section (Home page) */
+/* Profile section - side by side layout */
 .profile-section {
     display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-    margin-top: 2rem;
+    align-items: center;
+    margin: 60px 0;
+    gap: 50px;
 }
 
 .profile-container {
-    flex-shrink: 0;
+    flex: 0 0 200px; /* Made smaller from 300px to 200px */
 }
 
 .profile-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #e0e0e0;
+    width: 200px;         /* Fixed width instead of 100% */
+    height: 200px;        /* Fixed height to make it square */
+    border-radius: 50%;   /* Makes it perfectly round instead of 8px */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;    /* Ensures photo fits well in circle */
 }
 
 .profile-info {
@@ -218,106 +84,223 @@ main {
 
 .profile-info h1 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
+    margin-bottom: 20px;
+    color: #1a1a1a;
 }
 
 .bio {
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    text-align: justify;
-}
-
-.contact {
-    font-size: 1.1rem;
+    margin-bottom: 30px;
     color: #555;
-    margin-top: 2rem;
 }
 
-.contact a {
-    color: #3498db;
+.cv-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
     text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.contact a:hover {
-    text-decoration: underline;
+.cv-link:hover {
+    background-color: #0056b3;
+}
+
+/* Research page specific styles */
+.research-section {
+    margin-bottom: 60px;
+}
+
+.research-section h1 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0066cc;
+}
+
+.research-item {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+}
+
+.research-item h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+.abstract {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Teaching page specific styles - improved design */
+.page-section {
+    margin-bottom: 60px;
+}
+
+.page-section h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.title-underline {
+    width: 100%;
+    height: 3px;
+    background-color: #0066cc;
+    margin-bottom: 50px;
+}
+
+.institution-section {
+    margin-bottom: 60px;
+}
+
+.institution-section h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.role-block {
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+
+.role-block h3 {
+    font-size: 1.2rem;
+    color: #495057;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.course-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 30px;
+}
+
+.course-name {
+    font-size: 1rem;
+    color: #333;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.course-semester {
+    color: #666;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    min-width: 150px;
+    text-align: right;
+}
+
+/* General styles */
+h2 {
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Paper download link styling */
+.paper-link {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 6px 12px;
+    background-color: #0066cc;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    transition: background-color 0.3s;
+    vertical-align: middle;
+}
+
+.paper-link:hover {
+    background-color: #0056b3;
 }
 
 /* Footer */
 footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    color: #666;
+    color: #6c757d;
+    font-size: 0.9rem;
 }
 
-/* Responsive design */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    /* Navigation */
-    nav {
-        padding: 20px;
-        justify-content: center;
-    }
-    
-    nav ul {
-        gap: 20px;
-    }
-    
-    /* Main content */
-    main {
-        padding: 30px 20px;
-    }
-    
-    /* Page content */
-    .page-content h1 {
-        font-size: 36px;
-    }
-    
-    /* Profile section */
     .profile-section {
         flex-direction: column;
         text-align: center;
-        gap: 2rem;
+    }
+    
+    .profile-container {
+        flex: 0 0 auto;
+        max-width: 150px;     /* Made smaller for mobile from 200px to 150px */
+        margin: 0 auto 30px;
     }
     
     .profile-photo {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
+        width: 150px;         /* Smaller size for mobile */
+        height: 150px;        /* Smaller size for mobile */
     }
     
-    .profile-info h1 {
-        font-size: 2rem;
-    }
-    
-    .bio {
-        text-align: left;
-    }
-    
-    /* Research page */
-    .research-paper {
+    nav ul {
         flex-direction: column;
     }
     
-    .paper-sidebar {
-        width: 100%;
+    nav li {
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
-    .sidebar-content {
-        width: 100%;
-        height: 3px;
-        margin-top: 0;
+    /* Mobile responsive for research page */
+    .research-item {
+        padding: 20px 15px;
+        margin-bottom: 30px;
     }
     
-    /* Teaching page */
-    .course-entry {
+    .research-item h2 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+    
+    .paper-link {
+        display: block;
+        margin: 10px 0 0 0;
+        text-align: center;
+        width: fit-content;
+    }
+    
+    .abstract {
+        font-size: 0.95rem;
+    }
+    
+    /* Mobile responsive for teaching page */
+    .course-row {
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 20px;
+        margin-left: 15px;
     }
     
     .course-semester {
@@ -326,85 +309,19 @@ footer {
         min-width: auto;
     }
     
-    .institution-block h2 {
-        font-size: 24px;
+    .role-block {
+        margin-left: 15px;
     }
     
-    .role-section h3 {
-        margin-left: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+    .role-block h3 {
+        font-size: 1.1rem;
     }
     
-    main {
-        padding: 20px 15px;
+    .page-section h1 {
+        font-size: 2rem;
     }
     
-    .page-content h1 {
-        font-size: 28px;
+    .institution-section h2 {
+        font-size: 1.5rem;
     }
-    
-    .profile-info h1 {
-        font-size: 1.8rem;
-    }
-    
-    .bio {
-        font-size: 1rem;
-    }
-    
-    .institution-block h2 {
-        font-size: 20px;
-    }
-    
-    .role-section h3 {
-        font-size: 16px;
-        margin-left: 5px;
-    }
-    
-    .course-entry {
-        margin-left: 10px;
-    }
-}
-
-/* Print styles */
-@media print {
-    header {
-        display: none;
-    }
-    
-    footer {
-        display: none;
-    }
-    
-    main {
-        max-width: none;
-        padding: 0;
-    }
-    
-    .profile-section {
-        flex-direction: column;
-    }
-    
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-/* Accessibility improvements */
-a:focus,
-button:focus {
-    outline: 2px solid #3498db;
-    outline-offset: 2px;
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
 }
